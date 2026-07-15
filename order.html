@@ -1,63 +1,253 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
- 
+
 <title>Mock SAP Purchase Order</title>
- 
+
+
+
 <style>
- 
+
 body{
-    background:#111;
-    color:white;
-    font-family:Arial;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+
     margin:0;
+
+    background:#d9e2ef;
+
+    font-family:Segoe UI, Arial, sans-serif;
+
 }
- 
-.card{
-    background:#222;
-    padding:40px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 0 20px rgba(255,255,255,.1);
+
+
+
+.header{
+
+    background:#0d5aa7;
+
+    color:white;
+
+    padding:14px 20px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
 }
- 
-.number{
-    color:#4FC3F7;
-    font-size:42px;
-    margin-top:20px;
+
+
+
+.container{
+
+    width:800px;
+
+    margin:40px auto;
+
+    background:white;
+
+    border:1px solid #9aa9b8;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+
 }
- 
+
+
+
+.title{
+
+    background:#edf3fa;
+
+    border-bottom:1px solid #c8d4df;
+
+    padding:12px 20px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#003366;
+
+}
+
+
+
+.form{
+
+    padding:25px;
+
+}
+
+
+
+.row{
+
+    display:flex;
+
+    margin-bottom:18px;
+
+    align-items:center;
+
+}
+
+
+
+.label{
+
+    width:170px;
+
+    font-weight:600;
+
+    color:#2c3e50;
+
+}
+
+
+
+.value{
+
+    flex:1;
+
+    background:#f7f7f7;
+
+    border:1px solid #b8c2cc;
+
+    padding:8px 12px;
+
+    font-family:Consolas, monospace;
+
+}
+
+
+
+.status{
+
+    margin:20px 25px;
+
+    padding:12px;
+
+    background:#e7f5e8;
+
+    border:1px solid #81c784;
+
+    color:#1b5e20;
+
+    font-weight:bold;
+
+}
+
 </style>
- 
+
+
+
 </head>
- 
+
+
+
 <body>
- 
-<div class="card">
- 
-<h1>Mock SAP Purchase Order</h1>
- 
-<p>This is your Purchase Order:</p>
- 
-<div class="number" id="po"></div>
- 
+
+
+
+<div class="header">
+
+SAP S/4HANA - Purchase Order Display
+
 </div>
- 
+
+
+
+<div class="container">
+
+
+
+<div class="title">
+
+Purchase Order Information
+
+</div>
+
+
+
+<div class="form">
+
+
+
+<div class="row">
+
+<div class="label">Purchase Order</div>
+
+<div class="value" id="po"></div>
+
+</div>
+
+
+
+<div class="row">
+
+<div class="label">Material</div>
+
+<div class="value">MAT-100245</div>
+
+</div>
+
+
+
+<div class="row">
+
+<div class="label">Plant</div>
+
+<div class="value">RJ01</div>
+
+</div>
+
+
+
+<div class="row">
+
+<div class="label">Reservation</div>
+
+<div class="value">200345678</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="status">
+
+✔ Purchase Order successfully retrieved (Mock Environment)
+
+</div>
+
+
+
+</div>
+
+
+
 <script>
- 
+
 const params = new URLSearchParams(window.location.search);
- 
-const po = params.get("po");
- 
-document.getElementById("po").innerHTML = po || "Unknown";
- 
+
+
+
+const po = params.get("po") || "Unknown";
+
+
+
+document.getElementById("po").textContent = po;
+
 </script>
- 
+
+
+
 </body>
- 
+
 </html>
+
+ 
