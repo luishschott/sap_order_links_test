@@ -1,4 +1,20 @@
-<script>
-  const params = new URLSearchParams(window.location.search);
-  document.write("Order Number: " + params.get("order"));
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Status</title>
+</head>
+<body>
+    <script>
+        // This looks at the URL parameters (the part after the '?')
+        const params = new URLSearchParams(window.location.search);
+        const orderNumber = params.get("order");
+
+        if (orderNumber) {
+            document.write("<h1>Order Details</h1>");
+            document.write("<p>Your order number is: <strong>" + orderNumber + "</strong></p>");
+        } else {
+            document.write("<p>No order number was provided in the URL.</p>");
+        }
+    </script>
+</body>
+</html>
